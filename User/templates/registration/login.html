@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Login</h1>
+    </header>
+    <main>
+        <section>
+            <form action="" method="POST">
+                {% csrf_token %}
+                
+                <div>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="username" id="email" required>
+                </div>
+                <div>
+                    <label for="password1">Senha</label>
+                    <input type="password" name="password" id="password" required>
+                </div>
+
+                <button type="submit">Entrar</button>
+                <br>
+                <p>ou</p>
+                <br>
+                <a href="{% url 'register_user'%}">Cadastre-se</a>
+            </form>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>
