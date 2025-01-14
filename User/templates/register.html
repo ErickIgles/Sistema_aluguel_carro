@@ -1,51 +1,54 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <section>
-            <h1>OPENCAR</h1>
-        </section>
-
+    <header class="cabecalho">
+        <h1 class="titulo">SEJA BEM-VINDO AO OPENCAR</h1>
     </header>
-    <main>
-        <section>
+    <main class="container">
+        <section class="formulario">
+            <h2>Formulário de Cadastro</h2>
             <form action="" method="POST">
                 {% csrf_token %}
                 
-                <div>
+                <div class="container__label">
                     <label for="email">E-mail</label>
                     <input type="email" name="email" id="email" required>
                 </div>
-                <div>
+                <div class="container__label">
                     <label for="cpf">CPF</label>
                     <input type="text" name="cpf" id="cpf" required>
                 </div>
-                <div>
+                <div class="container__label">
                     <label for="phone_number">Telefone</label>
                     <input type="text" name="phone_number" id="phone_number" required>
                 </div>
-                <div>
+                <div class="container__label">
                     <label for="password1">Senha:</label>
                     <input type="password" name="password1" id="password1" required>
                 </div>
-                <div>
+                <div class="container__label">
                     <label for="password2">Confirmar Senha:</label>
                     <input type="password" name="password2" id="password2" required>    
                 </div>
                 
-                <button class="btn btn-primary" type="submit">Cadastro</button>
-                <br>
-                <p>ou</p>
-                <br>
-                <a href="{% url 'loginpage' %}">Login</a>
+                <div class="container__buttons">
+                    <button class="btn" type="submit">Cadastro</button>
+                    <a class="btn" href="{% url 'loginpage' %}">Login</a>
+                </div>
             </form>
         </section>
+        <img src="../static/image/carro.png" alt="imagem carro">
+
     </main>
-    <footer></footer>
+    <footer class="rodape">
+        <p>Desenvolvido por Erick</p>
+    </footer>
 </body>
 </html>
